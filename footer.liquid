@@ -32,7 +32,7 @@
 <footer role="contentinfo">
   <div class="footer_grid">
     <div class="left">
-    	<ul class="shop_links">
+    	<ul aria-label="Pages">
         	<li>Home</li>
             <li>Shop Everything</li>
             <li>Tops</li>
@@ -131,8 +131,8 @@
     {% endform %}
   </div> 
  </div>
-    <div class="right">
-     <ul class="support_links">
+  <div class="right">
+     <ul aria-label="Support">
        <li>FAQs</li>
        <li>Returns</li>
        <li>Shipping</li>
@@ -205,7 +205,14 @@
   footer {
     padding: 5vw 20vw 0 20vw;
   }
+  
   footer div.right {
+    grid-area: support;
+    align-self: end;
+    justify-self: end;
+  }
+  
+  footer div.right ul{
     grid-area: support;
   }
   
@@ -216,7 +223,7 @@
   .shop_links {
     float: left;
   }
-
+  
   footer div.left {
   	float: left;	
     grid-area: links;
@@ -246,6 +253,19 @@
   #sign-up {
     max-width: 20vw;
   }
+  
+  footer div.left ul:before	{
+    content:attr(aria-label);
+    font-size:120%;
+    font-weight:bold;
+}
+  
+  footer div.right ul:before	{
+    content:attr(aria-label);
+    font-size:120%;
+    font-weight:bold;
+}
+
     
 </style>
 
